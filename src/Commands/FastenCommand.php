@@ -68,6 +68,11 @@ class FastenCommand extends Command
     {
         $this->createMigration();
     }
+    
+    public function handle()
+    {
+        $this->createMigration();
+    }
 
     /**
      * Get the console command arguments.
