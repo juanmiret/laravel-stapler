@@ -57,6 +57,18 @@ class RefreshCommand extends Command
         $this->imageRefreshService->refresh($class, $attachments);
         $this->info('Done!');
     }
+    
+    public function handle()
+    {
+        $this->imageRefreshService->setOutput($this->output);
+
+        $class = $this->argument('class');
+        $attachments = $this->option('attachments') ?: '';
+
+        $this->info('Refreshing uploaded images...');
+        $this->imageRefreshService->refresh($class, $attachments);
+        $this->info('Done!');
+    }
 
     /**
      * Get the console command arguments.
